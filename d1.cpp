@@ -65,9 +65,19 @@ void d1(string input)
     map<int, int> appearances;
     set<int> lunique(left_nums.begin(), left_nums.end());
     for (int l : lunique) {
-        for (int i = 0; i < (int)right_nums.size(); i++) {
-            if (right_nums[i] == l) appearances[l]++;
+        int ri;
+        for (ri = 0; ri < (int)right_nums.size(); ri++) {
+            if (right_nums[ri] == l) {
+                break;
+            } 
         }
+
+        while (right_nums[ri] == l)
+        {
+            appearances[l]++;
+            ri++;
+        }
+        
     }
 
     for (int l : left_nums) {

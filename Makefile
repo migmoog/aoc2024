@@ -9,7 +9,7 @@ OBJS := $(SOURCES:.cpp=.o)
 
 all: aoc 
 
-test: clean aoc test.py
+test: aoc test.py
 	python test.py 
 
 aoc: $(OBJS)
