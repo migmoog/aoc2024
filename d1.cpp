@@ -3,6 +3,8 @@
 #include <iostream>
 #include <algorithm>
 #include <stdlib.h>
+#include <map>
+#include <set>
 
 using namespace std;
 
@@ -57,5 +59,21 @@ void d1(string input)
         total_distance += abs(left_nums[i] - right_nums[i]);
     }
 
-    cout << "Day 1 part 1: " << total_distance << endl;
+    // In C you'd have to actually write the utility.
+    // Having a std library in C is WEEEEIIIIIRRRRRDDDDD....
+    int shared_score = 0;
+    map<int, int> appearances;
+    set<int> lunique(left_nums.begin(), left_nums.end());
+    for (int l : lunique) {
+        for (int i = 0; i < (int)right_nums.size(); i++) {
+            if (right_nums[i] == l) appearances[l]++;
+        }
+    }
+
+    for (int l : left_nums) {
+        shared_score += l * appearances[l];
+    }
+
+    cout << "Day 1 part 1: " << total_distance
+         << "\nDay 1 part 2: " << shared_score << endl;
 }
