@@ -1,11 +1,11 @@
 CXX :=g++
-CFLAGS :=-g -Wall -Werror
+CFLAGS :=-g -Wall -Werror -Ihelpers
 LIBS := 
 
-SOURCES := $(wildcard *.cpp)
+SOURCES := $(wildcard *.cpp) $(wildcard helpers/*.cpp)
 OBJS := $(SOURCES:.cpp=.o)
 
-.PHONY: clean
+.PHONY: clean test
 
 all: aoc 
 

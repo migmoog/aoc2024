@@ -32,6 +32,11 @@ def d1(output):
     assert "Day 1 part 1: 11" in output 
     assert "Day 1 part 2: 31" in output
 
+@aoc_test(2, "d2t")
+def d2(output):
+    assert "part 1: 2" in output
+    assert "part 2: 4" in output
+
 # running tests
 if len(sys.argv) > 1:
     day_index = int(sys.argv[1]) 
