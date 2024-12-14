@@ -37,6 +37,18 @@ def d2(output):
     assert "part 1: 2" in output
     assert "part 2: 4" in output
 
+@aoc_test(3, "d3t")
+def d3(output):
+    assert "part 1: 161" in output
+
+@aoc_test(3, "d3t2")
+def d3t2(output):
+    assert "part 2: 48" in output
+
+@aoc_test(3, "d3gpt")
+def d3gpt(output):
+    assert f"part 2: {123 * 456}" in output
+
 # running tests
 if len(sys.argv) > 1:
     day_index = int(sys.argv[1]) 
