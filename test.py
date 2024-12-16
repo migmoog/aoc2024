@@ -49,6 +49,35 @@ def d3t2(output):
 def d3gpt(output):
     assert f"part 2: {123 * 456}" in output
 
+@aoc_test(4, "d4t")
+def d4(output):
+    assert """....XXMAS.
+.SAMXMS...
+...S..A...
+..A.A.MS.X
+XMASAMX.MM
+X.....XA.A
+S.S.S.S.SS
+.A.A.A.A.A
+..M.M.M.MM
+.X.X.XMASX""" in output
+    assert "part 1: 18" in output
+
+    #part 2 junk
+    assert """
+.M.S......
+..A..MSMS.
+.M.S.MAA..
+..A.ASMSM.
+.M.S.M....
+..........
+S.S.S.S.S.
+.A.A.A.A..
+M.M.M.M.M.
+..........
+    """ 
+    assert "part 2: 9" in output
+
 # running tests
 if len(sys.argv) > 1:
     day_index = int(sys.argv[1]) 
